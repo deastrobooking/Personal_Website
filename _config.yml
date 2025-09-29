@@ -1,0 +1,66 @@
+# Site settings
+title: "Professional Portfolio"
+email: your-email@example.com
+description: >-
+  A personal website for showcasing coding projects and research articles.
+  Features markdown support with LaTeX rendering for technical content.
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://deastrobooking.github.io" # the base hostname & protocol for your site
+twitter_username: your_username
+github_username: deastrobooking
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Kramdown settings for LaTeX support
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# Collections
+collections:
+  articles:
+    output: true
+    permalink: /:collection/:name/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+  -
+    scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
+      author: "Your Name"
